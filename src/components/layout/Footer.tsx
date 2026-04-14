@@ -12,11 +12,11 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "https://www.instagram.com/p/DWc7DppgrcE/?igsh=azF3YTdrandzeGJl", label: "Instagram" },
-   { icon: Facebook, href: "#", label: "facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Youtube, href: "https://youtube.com/@rangalifeengineer?si=QRGGYe8ZY5-UPtu7", label: "YouTube" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/ranga-reddy-60271b199", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/ranga.reddy.180982", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/share/18Vdp5NY5K/", label: "Facebook" },
+  { icon: Twitter, href: "https://x.com/RANGA02689146", label: "Twitter" },
 ];
 
 export const Footer = () => {
@@ -103,6 +103,8 @@ export const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-gold hover:text-accent-foreground transition-all duration-300"
                 >

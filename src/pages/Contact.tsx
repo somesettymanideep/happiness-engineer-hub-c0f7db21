@@ -32,9 +32,9 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Youtube, href: "https://youtube.com/@rangalifeengineer?si=QRGGYe8ZY5-UPtu7", label: "YouTube" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/ranga-reddy-60271b199", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/ranga.reddy.180982", label: "Instagram" },
 ];
 
 const Contact = () => {
@@ -138,6 +138,8 @@ const Contact = () => {
                     <a
                       key={social.label}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={social.label}
                       className="w-12 h-12 rounded-lg bg-card border border-border flex items-center justify-center hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all duration-300 text-muted-foreground"
                     >
