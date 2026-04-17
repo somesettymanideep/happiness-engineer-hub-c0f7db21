@@ -20,7 +20,9 @@ const Gallery = () => {
     setPhotos(allPhotos);
   }, []);
 
-  const categories = ["All", ...new Set(photos.map((p) => p.category).filter(Boolean))];
+  const baseCategories = ["Aviation", "Aviation Training", "Events", "Personal"];
+  const photoCategories = photos.map((p) => p.category).filter(Boolean) as string[];
+  const categories = ["All", ...Array.from(new Set([...baseCategories, ...photoCategories]))];
   
   const filteredPhotos = activeCategory === "All" 
     ? photos 
