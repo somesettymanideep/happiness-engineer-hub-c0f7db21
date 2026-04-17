@@ -1,10 +1,22 @@
 import { TextTestimonial, VideoTestimonial, ContactSubmission, GalleryPhoto } from "@/types/testimonials";
+import aviationTraining1 from "@/assets/gallery/aviation-training-1.jpeg";
+import aviationTraining2 from "@/assets/gallery/aviation-training-2.jpeg";
+import personalMarathon from "@/assets/gallery/personal-marathon.jpeg";
+import personalPlayItFull from "@/assets/gallery/personal-playitfull.jpeg";
+import personalFriends from "@/assets/gallery/personal-friends.jpeg";
+import personalMovie from "@/assets/gallery/personal-movie.jpeg";
+import personalBossWallah from "@/assets/gallery/personal-bosswallah.jpeg";
+import personalCyber from "@/assets/gallery/personal-cyber.jpeg";
+import personalBookGift from "@/assets/gallery/personal-bookgift.jpeg";
+
+const GALLERY_VERSION = "v2";
 
 const STORAGE_KEYS = {
   textTestimonials: "lifeengineer_text_testimonials",
   videoTestimonials: "lifeengineer_video_testimonials",
   contactSubmissions: "lifeengineer_contact_submissions",
   galleryPhotos: "lifeengineer_gallery_photos",
+  galleryVersion: "lifeengineer_gallery_version",
   adminAuth: "lifeengineer_admin_auth",
 };
 
@@ -80,32 +92,92 @@ const defaultVideoTestimonials: VideoTestimonial[] = [
 
 const defaultGalleryPhotos: GalleryPhoto[] = [
   {
-    id: "1",
-    title: "Aircraft Maintenance",
-    description: "Boeing 737-800 inspection at the tarmac",
-    imageUrl: "/placeholder.svg",
-    category: "Aviation",
+    id: "av1",
+    title: "Aircraft Sheet Metal Training",
+    description: "Hands-on training session with aviation students on sheet metal forming",
+    imageUrl: aviationTraining1,
+    category: "Aviation Training",
     order: 1,
     status: "active",
     createdAt: new Date().toISOString(),
   },
   {
-    id: "2",
-    title: "Training Session",
-    description: "Instructor training at GMR Aviation Academy",
-    imageUrl: "/placeholder.svg",
-    category: "Training",
+    id: "av2",
+    title: "From Raw Book to Final Book",
+    description: "The transformation journey of Decoding Happiness — from rough notes to published book",
+    imageUrl: aviationTraining2,
+    category: "Aviation Training",
     order: 2,
     status: "active",
     createdAt: new Date().toISOString(),
   },
   {
-    id: "3",
-    title: "Book Launch Event",
-    description: "Decoding Happiness book launch ceremony",
-    imageUrl: "/placeholder.svg",
-    category: "Events",
+    id: "p1",
+    title: "Hyderabad Airport Run",
+    description: "Completed the Hyderabad Airport Run with a finisher's medal",
+    imageUrl: personalMarathon,
+    category: "Personal",
     order: 3,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p2",
+    title: "Play It Full Event",
+    description: "A memorable moment at the Play It Full event",
+    imageUrl: personalPlayItFull,
+    category: "Personal",
+    order: 4,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p3",
+    title: "With Friends",
+    description: "Cherished moments with friends at a community event",
+    imageUrl: personalFriends,
+    category: "Personal",
+    order: 5,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p4",
+    title: "Krishna Gadi Prema Gaadha",
+    description: "Produced Telugu short film — Krishna Gadi Prema Gaadha",
+    imageUrl: personalMovie,
+    category: "Personal",
+    order: 6,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p5",
+    title: "Boss Wallah Academy Certification",
+    description: "Certificate of Completion — Business Launchpad Program",
+    imageUrl: personalBossWallah,
+    category: "Personal",
+    order: 7,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p6",
+    title: "Cyber Safety Participation",
+    description: "Certificate of participation at Cyber Safety event with Telangana Police",
+    imageUrl: personalCyber,
+    category: "Personal",
+    order: 8,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p7",
+    title: "Decoding Happiness — Reader Gift",
+    description: "Sharing Decoding Happiness with readers at Mullapudi Dental",
+    imageUrl: personalBookGift,
+    category: "Personal",
+    order: 9,
     status: "active",
     createdAt: new Date().toISOString(),
   },
@@ -122,8 +194,12 @@ function initializeStorage() {
   if (!localStorage.getItem(STORAGE_KEYS.contactSubmissions)) {
     localStorage.setItem(STORAGE_KEYS.contactSubmissions, JSON.stringify([]));
   }
-  if (!localStorage.getItem(STORAGE_KEYS.galleryPhotos)) {
+  if (
+    !localStorage.getItem(STORAGE_KEYS.galleryPhotos) ||
+    localStorage.getItem(STORAGE_KEYS.galleryVersion) !== GALLERY_VERSION
+  ) {
     localStorage.setItem(STORAGE_KEYS.galleryPhotos, JSON.stringify(defaultGalleryPhotos));
+    localStorage.setItem(STORAGE_KEYS.galleryVersion, GALLERY_VERSION);
   }
 }
 
