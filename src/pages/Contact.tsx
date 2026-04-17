@@ -14,14 +14,14 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@lifeengineer.com",
-    href: "mailto:contact@lifeengineer.com",
+    value: "wcsranga@gmail.com",
+    href: "mailto:wcsranga@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone / WhatsApp",
-    value: "+91-XXXXXXXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    value: "+91-9008642259",
+    href: "tel:+919008642259",
   },
   {
     icon: MapPin,
