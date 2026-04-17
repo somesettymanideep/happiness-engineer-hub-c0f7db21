@@ -194,8 +194,12 @@ function initializeStorage() {
   if (!localStorage.getItem(STORAGE_KEYS.contactSubmissions)) {
     localStorage.setItem(STORAGE_KEYS.contactSubmissions, JSON.stringify([]));
   }
-  if (!localStorage.getItem(STORAGE_KEYS.galleryPhotos)) {
+  if (
+    !localStorage.getItem(STORAGE_KEYS.galleryPhotos) ||
+    localStorage.getItem(STORAGE_KEYS.galleryVersion) !== GALLERY_VERSION
+  ) {
     localStorage.setItem(STORAGE_KEYS.galleryPhotos, JSON.stringify(defaultGalleryPhotos));
+    localStorage.setItem(STORAGE_KEYS.galleryVersion, GALLERY_VERSION);
   }
 }
 
