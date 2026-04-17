@@ -8,8 +8,14 @@ import personalMovie from "@/assets/gallery/personal-movie.jpeg";
 import personalBossWallah from "@/assets/gallery/personal-bosswallah.jpeg";
 import personalCyber from "@/assets/gallery/personal-cyber.jpeg";
 import personalBookGift from "@/assets/gallery/personal-bookgift.jpeg";
+import aviationBoeing from "@/assets/gallery/aviation-boeing.jpeg";
+import aviationAirportBookGift from "@/assets/gallery/aviation-airport-bookgift.jpeg";
+import personalKayak from "@/assets/gallery/personal-kayak.jpeg";
+import personalScuba from "@/assets/gallery/personal-scuba.jpeg";
+import personalNagarjuna from "@/assets/gallery/personal-nagarjuna.jpeg";
+import personalRaghavendraRao from "@/assets/gallery/personal-raghavendra-rao.jpeg";
 
-const GALLERY_VERSION = "v2";
+const GALLERY_VERSION = "v3";
 
 const STORAGE_KEYS = {
   textTestimonials: "lifeengineer_text_testimonials",
@@ -178,6 +184,66 @@ const defaultGalleryPhotos: GalleryPhoto[] = [
     imageUrl: personalBookGift,
     category: "Personal",
     order: 9,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "av3",
+    title: "Boeing 737-800 on the Tarmac",
+    description: "On-ground with a Boeing 737-800 during aircraft operations",
+    imageUrl: aviationBoeing,
+    category: "Aviation Training",
+    order: 10,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "av4",
+    title: "Decoding Happiness at GMR Aero Enterprise",
+    description: "Sharing Decoding Happiness at Rajiv Gandhi International Airport — GMR Aero Enterprise",
+    imageUrl: aviationAirportBookGift,
+    category: "Aviation Training",
+    order: 11,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p8",
+    title: "Kayaking on the Vltava",
+    description: "Kayaking adventure in Český Krumlov, Czech Republic",
+    imageUrl: personalKayak,
+    category: "Personal",
+    order: 12,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p9",
+    title: "Scuba Diving",
+    description: "Exploring the underwater world on a scuba diving expedition",
+    imageUrl: personalScuba,
+    category: "Personal",
+    order: 13,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p10",
+    title: "With Nagarjuna on Meelo Evaru Koteeswarudu",
+    description: "A memorable moment with actor Nagarjuna on the show set",
+    imageUrl: personalNagarjuna,
+    category: "Personal",
+    order: 14,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p11",
+    title: "With Director K. Raghavendra Rao",
+    description: "Presenting Decoding Happiness to legendary director K. Raghavendra Rao",
+    imageUrl: personalRaghavendraRao,
+    category: "Personal",
+    order: 15,
     status: "active",
     createdAt: new Date().toISOString(),
   },
