@@ -133,7 +133,7 @@ const AdminGallery = () => {
     });
   };
 
-  const categories = ["Aviation", "Training", "Events", "Personal", "Book", "Other"];
+  const categories = ["Aviation", "Aviation Training", "Training", "Events", "Personal", "Book", "Other"];
 
   return (
     <AdminLayout>
