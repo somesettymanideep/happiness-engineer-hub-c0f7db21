@@ -8,8 +8,14 @@ import personalMovie from "@/assets/gallery/personal-movie.jpeg";
 import personalBossWallah from "@/assets/gallery/personal-bosswallah.jpeg";
 import personalCyber from "@/assets/gallery/personal-cyber.jpeg";
 import personalBookGift from "@/assets/gallery/personal-bookgift.jpeg";
+import aviationBoeing from "@/assets/gallery/aviation-boeing.jpeg";
+import aviationAirportBookGift from "@/assets/gallery/aviation-airport-bookgift.jpeg";
+import personalKayak from "@/assets/gallery/personal-kayak.jpeg";
+import personalScuba from "@/assets/gallery/personal-scuba.jpeg";
+import personalNagarjuna from "@/assets/gallery/personal-nagarjuna.jpeg";
+import personalRaghavendraRao from "@/assets/gallery/personal-raghavendra-rao.jpeg";
 
-const GALLERY_VERSION = "v2";
+const GALLERY_VERSION = "v3";
 
 const STORAGE_KEYS = {
   textTestimonials: "lifeengineer_text_testimonials",
