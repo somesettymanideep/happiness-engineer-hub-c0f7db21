@@ -4,9 +4,14 @@
     <meta charset="utf-8" />
     <title>Life Engineer</title>
     <script>
-      // SPA fallback for GitHub Pages — redirect to root, HashRouter handles the rest
-      var path = location.pathname + location.search;
-      location.replace("/#" + path);
+      // SPA fallback for GitHub Pages — preserve the path for BrowserRouter
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+        "/?p=" + encodeURIComponent(l.pathname.slice(1)) +
+        (l.search ? "&q=" + encodeURIComponent(l.search.slice(1)) : "") +
+        l.hash
+      );
     </script>
   </head>
   <body></body>
