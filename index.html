@@ -39,6 +39,24 @@
   </head>
 
   <body>
+    <script>
+      // Restore SPA path after GitHub Pages 404 redirect
+      (function () {
+        var q = window.location.search;
+        if (q && q.indexOf("p=") !== -1) {
+          var params = new URLSearchParams(q);
+          var p = params.get("p");
+          var qs = params.get("q");
+          if (p !== null) {
+            window.history.replaceState(
+              null,
+              "",
+              "/" + p + (qs ? "?" + qs : "") + window.location.hash
+            );
+          }
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
