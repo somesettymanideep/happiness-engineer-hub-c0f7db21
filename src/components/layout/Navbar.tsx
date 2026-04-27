@@ -32,74 +32,76 @@ export const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed  top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || isOpen
-          ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent bg-white py-5"
-      }`}
-    >
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="relative z-50">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="flex items-center gap-2"
-            >
-              <span className="text-2xl font-serif font-bold text-primary">
-                Life<span className="text-gradient-gold">Engineer</span>
-              </span>
-            </motion.div>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative font-medium transition-colors duration-300 ${
-                  location.pathname === link.path
-                    ? "text-accent"
-                    : "text-foreground hover:text-accent"
-                }`}
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled || isOpen
+            ? "bg-background shadow-soft py-3"
+            : "bg-background py-5"
+        }`}
+      >
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="relative z-50">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="flex items-center gap-2"
               >
-                {link.name}
-                {location.pathname === link.path && (
-                  <motion.div
-                    layoutId="activeNav"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold-gradient rounded-full"
-                  />
-                )}
-              </Link>
-            ))}
-          </div>
+                <span className="text-2xl font-serif font-bold text-primary">
+                  Life<span className="text-gradient-gold">Engineer</span>
+                </span>
+              </motion.div>
+            </Link>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button variant="gold" size="default" asChild>
-              <Link to="/contact">Let's Connect</Link>
-            </Button>
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative font-medium transition-colors duration-300 ${
+                    location.pathname === link.path
+                      ? "text-accent"
+                      : "text-foreground hover:text-accent"
+                  }`}
+                >
+                  {link.name}
+                  {location.pathname === link.path && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold-gradient rounded-full"
+                    />
+                  )}
+                </Link>
+              ))}
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative z-50 p-2"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
-              <Menu className="w-6 h-6 text-foreground" />
-            )}
-          </button>
+            {/* CTA Button */}
+            <div className="hidden lg:block">
+              <Button variant="gold" size="default" asChild>
+                <Link to="/contact">Let's Connect</Link>
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden relative z-50 p-2"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6 text-foreground" />
+              ) : (
+                <Menu className="w-6 h-6 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
-      </div>
+      </motion.nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -109,7 +111,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 top-0 bg-background pt-24 shadow-card border-t border-border"
+            className="lg:hidden fixed inset-0 z-40 min-h-dvh overflow-y-auto bg-primary pt-24 shadow-card"
           >
             <div className="container mx-auto px-4">
               <div className="flex flex-col gap-4">
@@ -122,10 +124,10 @@ export const Navbar = () => {
                   >
                     <Link
                       to={link.path}
-                      className={`block py-3 text-xl font-serif font-medium border-b border-border transition-colors ${
+                      className={`block py-3 text-xl font-serif font-medium border-b border-primary-foreground/20 transition-colors ${
                         location.pathname === link.path
                           ? "text-accent"
-                          : "text-foreground"
+                          : "text-primary-foreground hover:text-accent"
                       }`}
                     >
                       {link.name}
@@ -147,6 +149,6 @@ export const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 };
