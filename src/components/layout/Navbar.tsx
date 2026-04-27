@@ -109,7 +109,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 top-0 bg-gradient-to-br from-background via-secondary to-background backdrop-blur-xl pt-24 shadow-card border-t border-border"
+            className="lg:hidden fixed inset-0 top-0 bg-background pt-24 shadow-card border-t border-border"
           >
             <div className="container mx-auto px-4">
               <div className="flex flex-col gap-4">
