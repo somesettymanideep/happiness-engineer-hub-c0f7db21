@@ -14,8 +14,9 @@ import personalKayak from "@/assets/gallery/personal-kayak.jpeg";
 import personalScuba from "@/assets/gallery/personal-scuba.jpeg";
 import personalNagarjuna from "@/assets/gallery/personal-nagarjuna.jpeg";
 import personalRaghavendraRao from "@/assets/gallery/personal-raghavendra-rao.jpeg";
+import personalNagarjunaTv from "@/assets/gallery/personal-nagarjuna-tv.jpeg";
 
-const GALLERY_VERSION = "v3";
+const GALLERY_VERSION = "v4";
 
 const STORAGE_KEYS = {
   textTestimonials: "lifeengineer_text_testimonials",
@@ -244,6 +245,16 @@ const defaultGalleryPhotos: GalleryPhoto[] = [
     imageUrl: personalRaghavendraRao,
     category: "Personal",
     order: 15,
+    status: "active",
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: "p12",
+    title: "With Nagarjuna on the TV Show Set",
+    description: "A memorable gallery moment with actor Nagarjuna on a television set",
+    imageUrl: personalNagarjunaTv,
+    category: "Personal",
+    order: 16,
     status: "active",
     createdAt: new Date().toISOString(),
   },
